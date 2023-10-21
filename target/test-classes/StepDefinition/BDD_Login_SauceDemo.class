@@ -1,0 +1,35 @@
+Êþº¾   4 ˜   "StepDefinition/BDD_Login_SauceDemo   java/lang/Object driver Lorg/openqa/selenium/WebDriver; <init> ()V Code
+  
+   	  
+   LineNumberTable LocalVariableTable this $LStepDefinition/BDD_Login_SauceDemo; user_open_the_browser RuntimeVisibleAnnotations Lio/cucumber/java/en/Given; value User open the browser	     java/lang/System   out Ljava/io/PrintStream;  Steps - User open the browser
+   "  ! java/io/PrintStream # $  println (Ljava/lang/String;)V  & (org/openqa/selenium/chrome/ChromeOptions
+ % 
+  ) java/lang/String + --disable-notifications
+ % - . / addArguments ?([Ljava/lang/String;)Lorg/openqa/selenium/chrome/ChromeOptions; 1 webdriver.chrome.driver 3 aC:/Users/riony/eclipse-workspace/Tugas_06_Syafrizal_Riony/src/test/resources/drivers/chromedriver.exe
+  5 6 7 
+setProperty 8(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;  9 'org/openqa/selenium/chrome/ChromeDriver
+ 8 
+
+ < >  = org/openqa/selenium/WebDriver ? @ manage )()Lorg/openqa/selenium/WebDriver$Options;
+ B D  C %org/openqa/selenium/WebDriver$Options E F window (()Lorg/openqa/selenium/WebDriver$Window;
+ H J  I $org/openqa/selenium/WebDriver$Window K  maximize opt *Lorg/openqa/selenium/chrome/ChromeOptions; user_on_saucedemo_login_page Lio/cucumber/java/en/And; User on saucedemo login page R %Steps - User on sourcedemo login page T https://www.saucedemo.com
+ < V W $ get user_enter_valid_username Lio/cucumber/java/en/When; User enter valid username \ !Steps - User enter valid username ^ username
+ ` b  a org/openqa/selenium/By c d id ,(Ljava/lang/String;)Lorg/openqa/selenium/By;
+ < f g h 
+findElement :(Lorg/openqa/selenium/By;)Lorg/openqa/selenium/WebElement;  j java/lang/CharSequence
+ l n  m org/openqa/selenium/WebElement o p sendKeys ([Ljava/lang/CharSequence;)V user_enter_valid_password User enter valid password t !Steps - User enter valid password v password
+ l x y  click
+ l { |  clear ~ YourPasswordHere click_login_button Click Login button ‚ Steps - Click Login button „ login-submit user_navigated_to_homepage 
+Exceptions  ˆ java/lang/InterruptedException Lio/cucumber/java/en/Then; $User navigated to homepage saucedemo Œ "Steps - User navigated to homepage
+ < Ž   close
+ < ‘ ’  quit 
+SourceFile BDD_Login_SauceDemo.java InnerClasses  Options Window !                   	   <     
+*· 
+*µ ±              	         
+            
+    s  	   ‘     E² ¶ » %Y· 'L+½ (Y*S¶ ,W02¸ 4W*» 8Y· :µ *´ ¹ ; ¹ A ¹ G ±                   &  1  D !        E      5 L M   N      
+  O  s P 	   F     ² Q¶ *´ S¹ U ±           %  (  )              X      
+  Y  s Z 	   W     %² [¶ *´ ]¸ _¹ e ½ iY]S¹ k ±           -  0 $ 1        %      q      
+  O  s r 	   …     K² s¶ *´ u¸ _¹ e ¹ w *´ u¸ _¹ e ¹ z *´ u¸ _¹ e ½ iY}S¹ k ±           5  8  9 . : J ;        K            
+  O  s € 	   N     ² ¶ *´ ƒ¸ _¹ e ¹ w ±           ?  B  C              …   †     ‡    
+  ‰  s Š 	   Q     ² ‹¶ *´ ¹  *´ ¹  ±           G  J  K  L              “    ” •     B < –	 H < —	

@@ -1,0 +1,57 @@
+ ˛∫æ   4 Õ   %StepDefinition/BDD_Checkout_SauceDemo   java/lang/Object driver Lorg/openqa/selenium/WebDriver; <init> ()V Code
+  
+   	  
+   LineNumberTable LocalVariableTable this 'LStepDefinition/BDD_Checkout_SauceDemo; LocalVariableTypeTable 5LStepDefinition/BDD_Checkout_SauceDemo<TWebElement;>; user_open_browser RuntimeVisibleAnnotations Lio/cucumber/java/en/Given; value User open browser	     java/lang/System   out Ljava/io/PrintStream;   Step - User open browser
+ " $  # java/io/PrintStream % &  println (Ljava/lang/String;)V  ( (org/openqa/selenium/chrome/ChromeOptions
+ ' 
+  + java/lang/String - --disable-notifications
+ ' / 0 1 addArguments ?([Ljava/lang/String;)Lorg/openqa/selenium/chrome/ChromeOptions; 3 webdriver.chrome.driver 5 aC:/Users/riony/eclipse-workspace/Tugas_06_Syafrizal_Riony/src/test/resources/drivers/chromedriver.exe
+  7 8 9 
+setProperty 8(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;  ; 'org/openqa/selenium/chrome/ChromeDriver
+ : =   > -(Lorg/openqa/selenium/chrome/ChromeOptions;)V
+ @ B  A org/openqa/selenium/WebDriver C D manage )()Lorg/openqa/selenium/WebDriver$Options;
+ F H  G %org/openqa/selenium/WebDriver$Options I J window (()Lorg/openqa/selenium/WebDriver$Window;
+ L N  M $org/openqa/selenium/WebDriver$Window O  maximize opt *Lorg/openqa/selenium/chrome/ChromeOptions; user_on_saucedemo_homepage Lio/cucumber/java/en/And; User on saucedemo homepage V Step - User on saucedemo home X https://www.saucedemo.com/
+ @ Z [ & get 8the_user_successfully_logs_in_using_the_correct_username Lio/cucumber/java/en/When; 8The user successfully logs in using the correct username ` 	user-name
+ b d  c org/openqa/selenium/By e f id ,(Ljava/lang/String;)Lorg/openqa/selenium/By;
+ @ h i j 
+findElement :(Lorg/openqa/selenium/By;)Lorg/openqa/selenium/WebElement; l password n login-button  p org/openqa/selenium/WebElement  r java/lang/CharSequence t 
+your_username
+ o v w x sendKeys ([Ljava/lang/CharSequence;)V z 
+your_password
+ o | }  click 
+usernameInput Ljava/lang/Object; 
+passwordInput 
+loginButton TWebElement; the_user_selects_the_item )The user selects the item {Fleece_Jacket}  Ü java/lang/StringBuilder à //div[contains(text(), '
+ Ö ä   &
+ Ö å ç é append -(Ljava/lang/String;)Ljava/lang/StringBuilder; ê ')]
+ Ö í ì î toString ()Ljava/lang/String;
+ b ñ ó f xpath itemName Ljava/lang/String; item the_user_clicks_the_button !The user clicks the {cart} button
+ b û ü f name 
+buttonName button 3in_the_cart_the_user_adds_a_quantity_to_the_product 4In the cart, The user adds a quantity to the product • quantity
+ o ß ®  clear ™ 2 
+quantityInput @the_user_provides_their_first_name_last_name_and_ZIP_postal_code BThe user provides their first name, last name, and ZIP/postal code Ø 
+first-name ± 	last-name ≥ 
+postal-code µ Ahmad ∑ Rifki π 12345 firstNameInput 
+lastNameInput postalCodeInput 0the_transaction_should_be_completed_successfully Lio/cucumber/java/en/Then; 0The transaction should be completed successfully ¡ finish
+ @ √ ƒ  quit finishButton 
+SourceFile BDD_Checkout_SauceDemo.java 	Signature 1<WebElement:Ljava/lang/Object;>Ljava/lang/Object; InnerClasses  Options Window !            	      	   N     
+*∑ 
+*µ ±           
+  
+ 	 
+        
+            
+            
+    s  	   §     F≤ ∂ !ª 'Y∑ )L+Ω *Y,S∂ .W24∏ 6W*ª :Y+∑ <µ *¥ π ? π E π K ±                   &  2  E          F      6 P Q         F      R      
+  S  s T 	   X     ≤ U∂ !*¥ Wπ Y ±           %  (  )                          \      
+  ]  s ^ 	   Î     [*¥ _∏ aπ g L*¥ k∏ aπ g M*¥ m∏ aπ g N+¿ oΩ qYsSπ u ,¿ oΩ qYySπ u -¿ oπ { ±            .  /  0 - 2 ? 3 Q 4 Z 5    *    [      L ~    = Ä   - . Å      *    [      L ~ Ç   = Ä Ç  - . Å Ç   É &     
+  S  s Ñ 	   é     ,*¥ ª ÖYá∑ â+∂ ãè∂ ã∂ ë∏ ïπ g M,¿ oπ { ±           : " ; + <         ,       , ò ô  " 
+ ö          ,     " 
+ ö Ç   õ &     
+  S  s ú 	   z     *¥ +∏ ùπ g M,¿ oπ { ±           A  B  C                 † ô   
+ °                
+ ° Ç   ¢      
+  S  s £ 	   á     +*¥ §∏ ùπ g L+¿ oπ ¶ +¿ oΩ qY©Sπ u ±           H  I  J * K        +       ´          +       ´ Ç   ¨      
+  S  s ≠ 	   Ù     d*¥ Æ∏ ùπ g L*¥ ∞∏ ùπ g M*¥ ≤∏ ùπ g N+¿ oΩ qY¥Sπ u ,¿ oΩ qY∂Sπ u -¿ oΩ qY∏Sπ u ±            P  Q  R - T ? U Q V c W    *    d      U ∫    F ª   - 7 º      *    d      U ∫ Ç   F ª Ç  - 7 º Ç   Ω      
+  æ  s ø 	   ~     "*¥ ¿∏ ùπ g L+¿ oπ { *¥ π ¬ ±           \  ]  ^ ! _        "       ≈          "       ≈ Ç   ∆    « »    …       F @ À	 L @ Ã	
